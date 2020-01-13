@@ -40,8 +40,8 @@ if __name__ == '__main__':
   # test cases
   cases = [
     ([1, 0, -1, 0, -2, 2], 0),
+    ([0, 0, 0, 0, 0, 0, 0], 0),
     ([0, 0, 0, 0], 0),
-    ([0, 0, 0, 0, 0, 0, 0], 0)
   ]
   rslts = [solver.fourSum(nums, target) for nums, target in cases]
   for cs, rs in zip(cases, rslts):
