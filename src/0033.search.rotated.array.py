@@ -6,11 +6,23 @@ class Solution:
     n = len(nums)
     i = 0
     j = n - 1
-    while i < j:
+    while i <= j:
       k = (i + j) // 2
-
+      if nums[k] == target:
+        return k
+      # left half i -> k is sorted
+      if nums[i] <= nums[k]:
+        if nums[i] <= target and target < nums[k]:
+          j = k - 1
+        else:
+          i = k + 1
+      # right half k -> j is sorted
+      else:
+        if nums[k] < target and target <= nums[j]: 
+          i = k + 1
+        else:
+          j = k - 1
     return -1
-
 
 
 if __name__ == '__main__':
