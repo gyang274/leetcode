@@ -6,6 +6,12 @@ class ListNode:
   def __init__(self, x):
     self.val = x
     self.next = None
+  def __repr__(self):
+    return str(self.val)
+  def copy(self):
+    x = ListNode(self.val)
+    x.next = self.next
+    return x
 
 
 def listToListNode(x: List) -> ListNode:
