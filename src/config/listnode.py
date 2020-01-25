@@ -8,6 +8,24 @@ class ListNode:
     self.next = None
   def __repr__(self):
     return str(self.val)
+  def __lt__(self, other):
+    if isinstance(other, self.__class__):
+      return self.val < other.val
+  def __le__(self, other):
+    if isinstance(other, self.__class__):
+      return self.val <= other.val
+  def __eq__(self, other):
+    if isinstance(other, self.__class__):
+      return self.val == other.val
+  def __ne__(self, other):
+    if isinstance(other, self.__class__):
+      return self.val != other.val
+  def __ge__(self, other):
+    if isinstance(other, self.__class__):
+      return self.val >= other.val
+  def __gt__(self, other):
+    if isinstance(other, self.__class__):
+      return self.val > other.val
   def copy(self):
     x = ListNode(self.val)
     x.next = self.next
