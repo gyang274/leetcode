@@ -16,7 +16,6 @@ class Solution:
     return max(memo)
 
 
-
 if __name__ == '__main__':
   solver = Solution()
   # test cases
