@@ -48,8 +48,7 @@ if __name__ == '__main__':
       [ 7, 8, 9],
       [10,11,12],
       [13,14,15],
-    ],
-    
+    ], 
   ]
   rslts = [solver.spiralOrder(matrix) for matrix in cases]
   for cs, rs in zip(cases, rslts):
