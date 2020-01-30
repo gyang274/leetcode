@@ -15,6 +15,7 @@ class Solution:
     k = n - 1
     while k > 0 and nums[k] == 2:
       k -= 1
+    # move around 0, 1, 2
     j = i
     while j <= k:
       if nums[j] == 0:
