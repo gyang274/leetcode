@@ -20,4 +20,4 @@ if __name__ == '__main__':
     solver.generateTrees(n) for (n) in cases
   ]
   for cs, rs in zip(cases, rslts):
-    print(f"case: {traverseListNode(cs[0])} + {traverseListNode(cs[1])} | solution: {traverseListNode(rs)}")
+    print(f"case: {(cs[0])} + {(cs[1])} | solution: {(rs)}")
