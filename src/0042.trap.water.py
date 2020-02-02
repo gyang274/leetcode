@@ -45,7 +45,7 @@ class Solution:
           w += lh - height[li]
         li += 1
     return w
-    
+
 
 if __name__ == '__main__':
   solver = Solution()
