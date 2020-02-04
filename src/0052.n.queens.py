@@ -5,6 +5,9 @@ class Solution:
     else:
       colLeft = cols & ~(hill | rowNext | dale)
       while colLeft:
+        # right most 1 in binary format, e,g., 10100 -> 100, 
+        # this is becuase bin(x) + bin(-x) => all 0 with overflow 1,
+        # so bin(x) last 1 get bin(-x) last 1, and both 0 on right, and 0, 1 each on left
         colTook = -colLeft & colLeft
         colLeft ^= colTook
         self.backtrack(rows + 1, cols, (hill | colTook) << 1, rowNext | colTook, (dale | colTook) >> 1, n)
