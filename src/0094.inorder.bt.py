@@ -26,7 +26,7 @@ class Solution:
     if root is not None:
       node, stack = root, []
       while node or stack:
-        while node:
+        while node is not None:
           stack.append(node)
           node = node.left
         node = stack.pop()
