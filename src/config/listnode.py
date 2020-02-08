@@ -30,6 +30,14 @@ class ListNode:
     x = ListNode(self.val)
     x.next = self.next
     return x
+  def display(self):
+    s, node = '', self
+    while node and node.next:
+      s += str(node.val) + ' -> '
+      node = node.next
+    if node:
+      s += str(node.val)
+    return s
 
 
 def listToListNode(x: List) -> ListNode:
@@ -40,12 +48,3 @@ def listToListNode(x: List) -> ListNode:
     n = n.next
   return s.next
 
-
-def traverseListNode(l: ListNode):
-  s = ''
-  while l:
-    s += str(l.val) + ' -> '
-    l = l.next
-  if len(s) > 0:
-    s = s[:-3]
-  return s
