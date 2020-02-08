@@ -63,7 +63,7 @@ if __name__ == '__main__':
     [3,9,20,None,None,15,7],
   ]
   cases = [
-    (listToTreeNode(x)) for x in cases
+    listToTreeNode(x) for x in cases
   ]
   rslts = [
     solver.zigzagLevelOrder(x) for x in cases
