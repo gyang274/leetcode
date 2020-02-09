@@ -48,7 +48,7 @@ if __name__ == '__main__':
   # test cases
   cases = [
     ("hit", "cog", ["hot","dot","dog","lot","log","cog"]),
-    # ("hit", "cog", ["hot","dot","dog","lot","log"]),
+    ("hit", "cog", ["hot","dot","dog","lot","log"]),
   ]
   rslts = [solver.findLadders(beginWord, endWord, wordList) for beginWord, endWord, wordList in cases]
   for cs, rs in zip(cases, rslts):
