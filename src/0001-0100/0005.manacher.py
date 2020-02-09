@@ -42,9 +42,9 @@ if __name__ == '__main__':
   # test cases
   cases = [
     "aba",
-    # "aabba",
-    # "aababa",
-    # "aabbaa"
+    "aabba",
+    "aababa",
+    "aabbaa",
   ]
   rslts = [solver.longestPalindrome(s) for s in cases]
   for cs, rs in zip(cases, rslts):

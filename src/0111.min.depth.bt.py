@@ -4,7 +4,7 @@ from config.treenode import TreeNode, listToTreeNode
 class Solution:
   def recursive(self, node):
     if node.left is not None or node.right is not None:
-      # default to max.INTEGER
+      # default to MAX_INTEGER
       node.depth = 2147483647
       if node.left is not None:
         node.depth = min(node.depth, 1 + self.recursive(node.left))
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     listToTreeNode(x) for x in cases
   ]
   rslts = [
-    solver.minDepth(nums) for nums in cases
+    solver.minDepth(root) for root in cases
   ]
   for cs, rs in zip(cases, rslts):
     print(f"case:\n{cs.display()}, solution: {rs}")
