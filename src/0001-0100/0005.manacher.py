@@ -23,7 +23,6 @@ class Solution:
         c, r = i, i
       # 2 * c - i - p[2 * c - i] == 2 * c - r
       if p[2 * c - i] == r - i:
-        print('in')
         while 2 * i - r >= 0 and r < n and ss(s, 2 * i - r) == ss(s, r):
           r += 1
         r -= 1

@@ -56,7 +56,7 @@ if __name__ == '__main__':
   solver = Solution()
   cases = [
     ([1, 3], [2]),
-    ([1, 2], [3, 4])
+    ([1, 2], [3, 4]),
   ]
   rslts = [
     solver.findMedianSortedArrays(nums1, nums2) for nums1, nums2 in cases
