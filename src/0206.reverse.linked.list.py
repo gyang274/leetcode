@@ -1,4 +1,4 @@
-from config.listnode import ListNode, listToListNode, traverseListNode
+from config.listnode import ListNode, listToListNode
 
 class Solution:
   def reverseList(self, head: ListNode) -> ListNode:
@@ -58,4 +58,4 @@ if __name__ == '__main__':
     solver.reverseList(l) for l in cases
   ]
   for cs, rs in zip(cases, rslts):
-    print(f"case: {traverseListNode(cs)} | solution: {traverseListNode(rs)}")
+    print(f"case: {cs.display()} | solution: {rs.display()}")

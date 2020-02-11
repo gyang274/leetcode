@@ -21,7 +21,9 @@ class TreeNode:
     return '\n'.join([ln0, ln1, ln2])
   # display the entire subtree rooted at this node
   def display(self):
-    lines, _, _, _ = self._display_aux()
+    lines = []
+    if self:
+      lines, _, _, _ = self._display_aux()
     return '\n'.join(lines)
   def _display_aux(self):
     """Returns list of strings, width, height, and horizontal coordinate of the root.
