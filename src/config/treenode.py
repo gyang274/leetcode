@@ -110,7 +110,7 @@ def inorderTraversalIterative(root: TreeNode) -> List:
   x = []
   if root is not None:
     node, stack = root, []
-    while node or stack:
+    while node is not None or stack:
       while node is not None:
         stack.append(node)
         node = node.left
