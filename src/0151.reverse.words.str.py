@@ -32,7 +32,7 @@ if __name__ == '__main__':
     "  hello world!  ",
     "a good   example ",
   ]
-  rslts = [solver.reverseWords(nums) for nums in cases]
+  rslts = [solver.reverseWords(s) for s in cases]
   for cs, rs in zip(cases, rslts):
     print(f"case: {cs} | solution: {rs}")  
   
