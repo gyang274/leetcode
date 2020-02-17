@@ -28,4 +28,4 @@ if __name__ == '__main__':
   ]
   rslts = [solver.minSubArrayLen(s, nums) for s, nums in cases]
   for cs, rs in zip(cases, rslts):
-    print(f"case: {cs} | solution: {rs}") 
+    print(f"case: {cs} | solution: {rs}")
