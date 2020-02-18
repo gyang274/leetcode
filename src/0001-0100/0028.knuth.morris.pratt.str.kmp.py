@@ -7,7 +7,6 @@ class Solution:
         return i
     return -1
 
-
 class Solution:
   def strStr(self, s: str, p: str) -> int:
     """Knuth-Morris-Pratt (KMP) Algorithm.
@@ -40,10 +39,8 @@ class Solution:
       i = i + max(1, j - k) 
     return -1
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     ("hello", "ll"),
     ("aaaaa", "ab"),
