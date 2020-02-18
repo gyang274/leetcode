@@ -19,7 +19,7 @@ class Solution:
     # go through nums, each bucket at most one, each nums just need to consider adjacent buckets
     for i in range(n):
       if i > k:
-        buckets.pop((nums[i - k - 1] - xmin) // (t + 1)])
+        buckets.pop((nums[i - k - 1] - xmin) // (t + 1))
       b = (nums[i] - xmin) // (t + 1)
       if b in buckets:
         return True
