@@ -13,7 +13,7 @@ class Solution:
     # bucket of [xmin + i * (t + 1), xmin + (i + 1) * (t + 1)), i = 0, 1, ..
     # buckets = [None for i in range(xmin, xmax + 1, t + 1)]
     # nb = len(buckets)
-    # ^ memory limit exceed ([2147483647,-2147483645], 1, 5)
+    # ^ memory limit exceed ([2147483647, -2147483645], 1, 5)
     # improvement: no need to allocate the buckets beforehand, use i of xmin + i * (t + 1) as key
     buckets = {}
     # go through nums, each bucket at most one, each nums just need to consider adjacent buckets

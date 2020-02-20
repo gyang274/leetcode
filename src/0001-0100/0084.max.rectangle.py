@@ -1,6 +1,5 @@
 from typing import List
 
-
 class Solution:
   def largestRectangleArea(self, heights: List[int]) -> int:
     """Stack with left and right wall, stack left, moving right.
@@ -34,10 +33,8 @@ class Solution:
       amax = max(amax, (n - stack[-1][0] - 1) * lh)
     return amax
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     [0],
     [1],
