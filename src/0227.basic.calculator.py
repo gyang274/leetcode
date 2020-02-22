@@ -47,4 +47,4 @@ if __name__ == '__main__':
   ]
   rslts = [solver.calculate(s) for s in cases]
   for cs, rs in zip(cases, rslts):
-    print(f"case: {cs} | solution: {rs}")  
+    print(f"case: {cs} | solution: {rs}")
