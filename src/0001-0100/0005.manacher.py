@@ -36,7 +36,6 @@ class Solution:
       # print(i, c, r, [ss(s, i) + ':' + str(p[i]) for i in range(n)])
     return s[((mi - ml) // 2):((mi + ml) // 2)]
 
-
 if __name__ == '__main__':
   solver = Solution()
   cases = [

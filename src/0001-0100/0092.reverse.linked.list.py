@@ -1,6 +1,5 @@
 from config.listnode import ListNode, listToListNode, traverseListNode
 
-
 class Solution:
   def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
     if m == n: return head
@@ -27,8 +26,6 @@ class Solution:
     y.next = z.next
     z.next = p
     return s.next
-
-
 
 if __name__ == '__main__':  
   solver = Solution()
