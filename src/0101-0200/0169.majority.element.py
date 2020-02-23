@@ -32,6 +32,23 @@ class Solution:
       i += 1
     return x
 
+class Solution:
+  def majorityElement(self, nums: List[int]) -> int:
+    """annihilation: delete both element i and j when not nums[i] == nums[j], 
+      since majority even in worst case whatever left is the single majority.
+      improvement: keep a value and count, no need to keep a stack as at most one value in stack, and append is costly.
+    """
+    s, count = None, 0
+    for x in nums:
+      if count == 0:
+        s = x
+        count = 1
+      elif x == s:
+        count += 1
+      else:
+        count -= 1
+    return s
+
 if __name__ == '__main__':
   solver = Solution()
   cases = [

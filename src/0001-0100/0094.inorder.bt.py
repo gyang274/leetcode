@@ -1,7 +1,6 @@
 from typing import List
 from config.treenode import TreeNode, listToTreeNode
 
-
 class Solution:
   def inorderTraversalRecursive(self, x, root):
     if root.left is not None:
@@ -16,7 +15,6 @@ class Solution:
     if root is not None:
       self.inorderTraversalRecursive(x, root)
     return x
-
 
 class Solution:
   def inorderTraversal(self, root: TreeNode) -> List[int]:
@@ -33,7 +31,6 @@ class Solution:
         x.append(node.val)
         node = node.right
     return x
-
 
 class Solution:
   def inorderTraversal(self, root: TreeNode) -> List[int]:
@@ -58,7 +55,6 @@ class Solution:
           node.left, node = None, node.left 
     return x
 
-
 if __name__ == '__main__':  
   solver = Solution()
   cases = [
@@ -72,4 +68,3 @@ if __name__ == '__main__':
   ]
   for cs, rs in zip(cases, rslts):
     print(f"case:\n{cs.display()}, solution: {rs}")
-
