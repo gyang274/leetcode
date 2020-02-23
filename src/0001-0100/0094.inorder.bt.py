@@ -67,4 +67,4 @@ if __name__ == '__main__':
     solver.inorderTraversal(x) for x in cases
   ]
   for cs, rs in zip(cases, rslts):
-    print(f"case:\n{cs.display()}, solution: {rs}")
+    print(f"case:\n{cs.display()} | solution: {rs}")
