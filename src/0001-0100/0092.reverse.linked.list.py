@@ -46,4 +46,4 @@ if __name__ == '__main__':
     solver.reverseBetween(l, m, n) for (l, m, n) in cases
   ]
   for cs, rs in zip(cases, rslts):
-    print(f"case: {traverseListNode(cs[0])} + {cs[1:]} | solution: {traverseListNode(rs)}")
+    print(f"case: {cs[0].display()} + {cs[1:]} | solution: {rs.display()}")
