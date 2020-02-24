@@ -1,6 +1,6 @@
 from typing import List
 
-
+# # TODO: use memo to keep intermediate results?
 # class Solution(object):
 #   def generateParenthesis(self, n: int) -> List[str]:
 #     if n == 0: return ['']
@@ -10,7 +10,6 @@ from typing import List
 #         for xr in self.generateParenthesis(n - 1 - k):
 #           x.append('({}){}'.format(xl, xr))
 #     return x
-
 
 class Solution:
   def addParenthesis(self, x: List[str], s: str, nl: int, nr: int) -> List[str]:
@@ -26,10 +25,8 @@ class Solution:
     self.addParenthesis(x, "", n, 0)
     return x
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     3, 4, 5
   ]
