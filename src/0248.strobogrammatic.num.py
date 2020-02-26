@@ -43,10 +43,13 @@ class Solution:
       return 3
     else: # k > 1
       return 4 * (5 ** ((k - 2) // 2)) * (3 ** (k % 2))
-  def strobogrammaticSameLengthLEStr(self, num, recursive=False, inclusive=True):
+  def strobogrammaticSameLengthLTEStr(self, num, recursive=False, inclusive=True):
     """Args:
       recursive: whether or not func is called in recursive by itself or directly from outside.
         if direct from outside then `0` can be the 1st item (self.stroboInit), othersise in recursive ok (self.strobo).
+      inclusive: count number of strobogrammatic with the same length as num and <= num if inclusive is True else < num.
+    Return:
+      number of strobogrammatic with the same length as num and <= num if inclusive is True else < num
     """
     k = len(num)
     if k == 0:
@@ -66,7 +69,7 @@ class Solution:
           elif num[0] == s and num[-1] >= r:
             if k > 2:
               ans = (n - 1) * (5 ** ((k - 2) // 2)) * (3 ** (k % 2))
-              ans += self.strobogrammaticSameLengthLEStr(num[1:-1], recursive=True, inclusive=True)
+              ans += self.strobogrammaticSameLengthLTEStr(num[1:-1], recursive=True, inclusive=True)
             else:
               ans = n
           # "886" -> (8, 6) and 8, so middle 8 gives (0, 1), exclusive
@@ -74,7 +77,7 @@ class Solution:
             # num[0] == s and num[-1] < r:
             if k > 2:  
               ans = (n - 1) * (5 ** ((k - 2) // 2)) * (3 ** (k % 2))
-              ans += self.strobogrammaticSameLengthLEStr(num[1:-1], recursive=True, inclusive=False)
+              ans += self.strobogrammaticSameLengthLTEStr(num[1:-1], recursive=True, inclusive=False)
             else:
               ans = n - 1
           break
@@ -85,8 +88,8 @@ class Solution:
   def strobogrammaticInRange(self, low: str, high: str) -> int:
     """Three functions:
       1. num of strobogrammatic number with length k.
-      2. num of strobogrammatic number with same length and less than the low `str`.
-      3. num of strobogrammatic number with same length and greater than high `str`.
+      2. num of strobogrammatic number with same length and less than or equal to the low `str`.
+      3. num of strobogrammatic number with same length and greater than or equal to high `str`.
       Note: 3 can be achieved by 1 and 2 and num itself is strobogrammatic or not as in Q0246.
     """
     kl, kh = len(low), len(high)
@@ -97,8 +100,8 @@ class Solution:
     ans = 0
     for k in range(kl, kh):
       ans += self.strobogrammaticLengthK(k)
-    ans += self.strobogrammaticSameLengthLEStr(high)
-    ans -= self.strobogrammaticSameLengthLEStr(low, inclusive=False)
+    ans += self.strobogrammaticSameLengthLTEStr(high)
+    ans -= self.strobogrammaticSameLengthLTEStr(low, inclusive=False)
     return ans
 
 if __name__ == '__main__':
