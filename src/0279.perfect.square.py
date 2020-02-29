@@ -52,6 +52,34 @@ class Solution:
     self.backtrack(n)
     return self.memo[n]
 
+class Solution:
+  def backtrack(self, n):
+    if n not in self.memo:
+      m = int(n ** 0.5)
+      if n == m ** 2:
+        self.memo[n] = 1
+      else:
+        self.memo[n] = n
+        # further reduce the backtrack by pruning out smaller ones, sqrt(sqrt(n))
+        for s in range(m, max(1, int(m ** 0.5)), -1):
+          # only requires up to sqrt(n), instead of n
+          self.memo[n] = min(self.backtrack(n % s ** 2) + (n // (s ** 2)), self.memo[n])
+    return self.memo[n]
+  def numSquares(self, n: int) -> int:
+    """backtrack.
+      improvement: only recursive from sqrt(n) down to sqrt(sqrt(n)) instead all 1, .., n.
+    """
+    self.memo = {
+      0: 0,
+      1: 1, 
+      2: 2, 
+      3: 3,
+    }
+    self.backtrack(n)
+    return self.memo[n]
+
+# TODO: math prove: 3 * a^2 = b^2 + c^2, has no trival solution other than a = b = c = 0? Thus, if x = 3*a^2 then stop?
+
 if __name__ == '__main__':
   solver = Solution()
   cases = [
