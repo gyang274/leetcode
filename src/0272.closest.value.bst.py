@@ -42,7 +42,7 @@ class Solution:
         while stack and stack[-1].val < node.val:
           stack.pop()
       return stack[-1].val if stack else None
-    return []
+    return None
   def closestKValues(self, root: TreeNode, target: float, k: int) -> List[int]:
     """maintain 2 stacks, 1st keep find next largest < target, 2nd keep find next smallest > target.
     """
