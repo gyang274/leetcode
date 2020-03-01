@@ -5,10 +5,8 @@ class Solution:
     """
     if n == 0:
       return 0
-    if n == 1:
-      return k
-    # n == 2
-    s1, s2 = k, k * (k - 1)
-    for _ in range(3, n + 1):
+    # n == 1
+    s1, s2 = 0, k
+    for _ in range(2, n + 1):
       s1, s2 = s2, (s1 + s2) * (k - 1)
     return s1 + s2
