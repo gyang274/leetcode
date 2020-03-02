@@ -107,4 +107,4 @@ if __name__ == '__main__':
     solver.closestKValues(root, target, k) for root, target, k in cases
   ]
   for cs, rs in zip(cases, rslts):
-    print(f"case:\n{cs[0].display()}, {cs[1:]} | solution: {rs}")     
+    print(f"case:\n{cs[0].display()}, {cs[1:]} | solution: {rs}")
