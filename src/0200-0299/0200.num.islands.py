@@ -26,7 +26,7 @@ class Solution:
               if grid[i][j] == "1":
                 bounary.add((i, j))
     return islands
-  
+
 if __name__ == '__main__':
   solver = Solution()
   cases = [
@@ -37,6 +37,6 @@ if __name__ == '__main__':
     [["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]],
     [["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]],
   ]
-  rslts = [solver.numIslands(prices) for prices in cases]
+  rslts = [solver.numIslands(grid) for grid in cases]
   for cs, rs in zip(cases, rslts):
-    print(f"case: {cs} | solution: {rs}")  
+    print(f"case: {cs} | solution: {rs}")
