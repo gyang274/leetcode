@@ -19,7 +19,7 @@ class Solution:
       if counter < 0:
         # found an invalid, remove any p[1] before, remove the first one of a consecutive sequence.
         for k in range(i, j + 1):
-          if s[k] == p[1] and (k == 0 or not s[k - 1] == p[1]):
+          if s[k] == p[1] and (k == i or not s[k - 1] == p[1]):
             self.recursive(s[:k] + s[(k + 1):], k, j, p)
         return None
       j += 1
