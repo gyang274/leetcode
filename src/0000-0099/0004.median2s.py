@@ -50,7 +50,6 @@ class Solution:
         else:
           minr = min(nums1[i], nums2[j])
         return (maxl + minr) / 2.0
-      
 
 if __name__ == '__main__':
   solver = Solution()
