@@ -1,4 +1,5 @@
 from typing import List
+from functools import lru_cache
 
 class Solution:
   def recursive(self, nums):
@@ -56,8 +57,6 @@ class Solution:
     self.memo = {}
     self.nums = [1] + nums + [1]
     return self.recursive(0, len(self.nums) - 1)
-
-from functools import lru_cache
 
 class Solution:
   @lru_cache(None)
