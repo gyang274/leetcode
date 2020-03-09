@@ -1,4 +1,4 @@
-from config.listnode import ListNode, listToListNode, traverseListNode
+from config.listnode import ListNode, listToListNode
 
 class Solution:
   def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
