@@ -29,6 +29,43 @@ class Solution:
       j *= 2
     return x
 
+class Solution:
+  def hammingWeight(self, n: int) -> int:
+    """bit manipulation:
+      n & (n - 1) flip the rightmost 1 into 0
+      n & ~(n - 1) or n & (-n) get out rigthmost 1 with trailing zeros, e.g., rightmost 1's index
+    """
+    ans = 0
+    while n > 0:
+      n &= (n - 1)
+      ans += 1
+    return ans
+  def countBits(self, num: int) -> List[int]:
+    """Q191
+    """
+    x = [0] * (num + 1)
+    for i in range(1, num + 1):
+      x[i] = self.hammingWeight(i)
+    return x
+
+class Solution:
+  def countBits(self, num: int) -> List[int]:
+    """dyanmic programming + least significant bit
+    """
+    x = [0] * (num + 1)
+    for i in range(1, num + 1):
+      x[i] = x[i >> 1] + (i & 1)
+    return x
+
+class Solution:
+  def countBits(self, num: int) -> List[int]:
+    """dyanmic programming + last set bit
+    """
+    x = [0] * (num + 1)
+    for i in range(1, num + 1):
+      x[i] = x[i & (i - 1)] + 1
+    return x
+
 if __name__ == '__main__':
   solver = Solution()
   cases = [
