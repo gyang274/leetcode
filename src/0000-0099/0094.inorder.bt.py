@@ -61,7 +61,7 @@ if __name__ == '__main__':
     [1, None, 2, 3]
   ]
   cases = [
-    (listToTreeNode(x)) for x in cases
+    listToTreeNode(x) for x in cases
   ]
   rslts = [
     solver.inorderTraversal(x) for x in cases
