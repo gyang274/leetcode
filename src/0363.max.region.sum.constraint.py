@@ -54,12 +54,6 @@ class Solution:
         xmax = max(xmax, self.maxSumSubarray(r12, k))
     return xmax
 
-# class Solution:
-#   def a():
-#     """Q0308, segment tree 2d, O(NMlogNlogM).
-#     """
-#     return x
-
 if __name__ == '__main__':
   solver = Solution()
   cases = [
