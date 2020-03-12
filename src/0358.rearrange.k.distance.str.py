@@ -45,23 +45,23 @@ class Solution:
             i += 1
     return "".join(["".join(q) for q in r])
 
-# class Solution:
-#   def rearrangeString(self, s, k):
-#     n = len(s)
-#     if not k: return s
-#     count = Counter(s)
-#     xmax = max(count.values())
-#     if (xmax - 1) * k + list(count.values()).count(xmax) > len(s):
-#       return ""
-#     r = list(s)
-#     i = (n - 1) % k
-#     for c in sorted(count, key=lambda i: -count[i]):
-#       for j in range(count[c]):
-#         r[i] = c
-#         i += k
-#         if i >= n:
-#           i = (i - 1) % k
-#     return "".join(r)
+class Solution:
+  def rearrangeString(self, s, k):
+    n = len(s)
+    if not k: return s
+    count = Counter(s)
+    xmax = max(count.values())
+    if (xmax - 1) * k + list(count.values()).count(xmax) > len(s):
+      return ""
+    r = list(s)
+    i = (n - 1) % k
+    for c in sorted(count, key=lambda i: -count[i]):
+      for j in range(count[c]):
+        r[i] = c
+        i += k
+        if i >= n:
+          i = (i - 1) % k
+    return "".join(r)
 
 if __name__ == '__main__':
   solver = Solution()
