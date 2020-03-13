@@ -43,14 +43,40 @@
 
 class Solution:
   def __init__(self):
-    self.depth = 0
-  def depthSum(self, nestedList: List[NestedInteger]) -> int:
-    self.depth += 1
-    xsum = 0
+    self.depth = 1
+    # self.uwxsum: unweighted sum
+    # so whenenver encounter a deeper level, +uwxsum of earlier
+    self.uwxsum = 0
+    # self.xsum: weighted sum
+    # this is the weighted sum w.r.t current explore depth
+    self.xsum = 0
+  def depthSumInverse(self, nestedList: List[NestedInteger]) -> int:
+    self.depth -= 1
+    if self.depth == 0:
+      self.depth += 1
+      self.xsum += self.uwxsum
     for ni in nestedList:
       if ni.isInteger():
-        xsum += self.depth * ni.getInteger()
+        self.uwxsum += ni.getInteger()
+        self.xsum += self.depth * ni.getInteger()
       else:
-        xsum += self.depthSum(ni.getList())
-        self.depth -= 1
-    return xsum
+        self.depthSumInverse(ni.getList())
+        self.depth += 1
+    return self.xsum
+
+class Solution:
+  def depthSumInverse(self, nestedList: List[NestedInteger]) -> int:
+    """BFS
+    """
+    # us: unweighted sum
+    # ws: weighted sum w.r.t inverse depth
+    us, ws, nestedListNextDepth = 0, 0, []
+    while nestedList:
+      for ni in nestedList:
+        if ni.isInteger():
+          us += ni.getInteger()
+        else:
+          nestedListNextDepth.extend(ni.getList())
+      ws += us
+      nestedList, nestedListNextDepth = nestedListNextDepth, []
+    return ws
