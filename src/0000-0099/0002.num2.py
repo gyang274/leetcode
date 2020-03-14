@@ -1,6 +1,5 @@
 from config.listnode import ListNode, listToListNode
 
-
 class Solution:
   def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
     n = s = ListNode(0)
@@ -16,7 +15,6 @@ class Solution:
       k //= 10
       n = n.next
     return s.next
-
 
 if __name__ == '__main__':  
   solver = Solution()
