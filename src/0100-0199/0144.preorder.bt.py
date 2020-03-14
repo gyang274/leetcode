@@ -67,8 +67,8 @@ if __name__ == '__main__':
     (listToTreeNode(x)) for x in cases
   ]
   rslts = [
-    solver.preorderTraversal(x) for x in cases
+    solver.preorderTraversal(root) for root in cases
   ]
   for cs, rs in zip(cases, rslts):
-    print(f"case:\n{cs.display()}, solution: {rs}")
+    print(f"case:\n{cs.display() if cs else None}, solution: {rs}")
 
