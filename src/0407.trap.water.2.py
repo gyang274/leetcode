@@ -1,6 +1,6 @@
-import heapq
 from typing import List
 
+import heapq
 
 class Solution:
   def trapRainWater(self, heightMap: List[List[int]]) -> int:
@@ -44,7 +44,6 @@ class Solution:
         visit.add((nx, ny))
         # print(f'visit: {nx=}, {ny=}, {h=}, {hbnd=}, {hmin=}, {w=}')
     return w
-    
 
 if __name__ == '__main__':
   solver = Solution()

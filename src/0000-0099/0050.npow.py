@@ -2,14 +2,12 @@ class Solution:
   def myPow(self, x: float, n: int) -> float:
     if n < 0:
       return self.myPow(1 / x, -n)
-    i = 0
     z = 1
     while n > 0:
       if n % 2:
         z *= x
       x *= x
       n //= 2
-      i += 1
     return z
 
 
