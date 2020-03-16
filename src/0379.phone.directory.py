@@ -1,4 +1,5 @@
 class PhoneDirectory:
+  
   def __init__(self, maxNumbers: int):
     """Initialize your data structure here
       @param maxNumbers - The maximum numbers that can be stored in the phone directory.
