@@ -2,7 +2,7 @@ from collections import deque
 
 class Solution:
   def getMoneyAmount(self, n: int) -> int:
-    """dynamic programing, O(N^3).
+    """dynamic programming, O(N^3).
     """
     dp = [[0] * (n + 1) for _ in range(n + 1)]
     for L in range(n - 1, 0, -1):
@@ -14,7 +14,7 @@ class Solution:
 
 class Solution:
   def getMoneyAmount(self, n: int) -> int:
-    """dynamic programing + monotonic increase property of f(L, k), O(N^2)
+    """dynamic programming + monotonic increase property of f(L, k), O(N^2)
     """
     # Key:
     # https://blog.csdn.net/Site1997/article/details/100168676
