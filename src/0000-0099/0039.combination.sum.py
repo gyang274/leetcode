@@ -1,8 +1,6 @@
 from typing import List
 
-
 # class Solution:
-#   """Solution (DFS) contains duplicate combinations, duplicate as a result of permutation."""
 #   def combinationSumRecursive(self, rslts: List[List[int]], candidates: List[int], rslt: List[int], target: int) -> None:
 #     print(candidates, target, rslt)
 #     if target == 0:
@@ -11,6 +9,8 @@ from typing import List
 #       if target - x >= 0:
 #         self.combinationSumRecursive(rslts, candidates, rslt + [x], target - x)
 #   def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+#     """solution (DFS) contains duplicate combinations, duplicate as a result of permutation.
+#     """
 #     rslts = []
 #     self.combinationSumRecursive(rslts, candidates, [], target)
 #     return rslts
@@ -27,10 +27,8 @@ class Solution:
             rslts[i].append(r + [x])
     return rslts[target]
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     ([2, 3, 6, 7], 7),
     ([2, 3, 5], 8),

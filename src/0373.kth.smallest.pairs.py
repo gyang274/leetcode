@@ -39,7 +39,7 @@ class Solution:
     visited, q, x = set([(0, 0), ]), [(nums1[0] + nums2[0], 0, 0), ], []
     heapq.heapify(q)
     # add one at a time  
-    while (len(x) < k) and q:
+    while len(x) < k and q:
       _, i, j = heapq.heappop(q)
       if i + 1 < n1 and (i + 1, j) not in visited:
         heapq.heappush(q, (nums1[i + 1] + nums2[j], i + 1, j))

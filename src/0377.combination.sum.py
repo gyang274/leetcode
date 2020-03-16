@@ -10,6 +10,8 @@ class Solution:
             self.memo[target] += self.recursive(target - x)
     return self.memo[target]
   def combinationSum4(self, nums: List[int], target: int) -> int:
+    """Q0039.
+    """
     if target <= 0:
       return 0
     if len(nums) == 0:
@@ -23,7 +25,7 @@ class Solution:
 
 class Solution(object):
   def combinationSum4(self, nums: List[int], target: int) -> int:
-    """dynamic programming
+    """Q0039, dynamic programming.
     """
     if target <= 0:
       return 0
