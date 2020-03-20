@@ -53,35 +53,35 @@ class Solution:
         r = x
     return l
 
-# class Solution:
-#   def recursive(self, i, j, k):
-#     if (i, j, k) not in self.memo:    
-#       if k == 1:
-#         self.memo[(i, j, k)] = sum(self.nums[i:j])
-#       elif k >= j - i:
-#         self.memo[(i, j, k)] = max(self.nums[i:j])
-#       else:
-#         self.memo[(i, j, k)] = sum(self.nums)
-#         l, r = i + k // 2 - 1, j - (k - k // 2) + 1
-#         while l < r:
-#           m = l + (r - l) // 2
-#           sl = self.recursive(i, m, k // 2)
-#           sr = self.recursive(m, j, k - k // 2)
-#           self.memo[(i, j, k)] = min(max(sl, sr), self.memo[(i, j, k)])
-#           if sl == sr:
-#             break
-#           elif sl < sr:
-#             l = m + 1
-#           else:
-#             r = m
-#     # print(f"{i=}, {j=}, {k=}, {self.memo[(i, j, k)]=}")
-#     return self.memo[(i, j, k)]
-#   def splitArray(self, nums: List[int], m: int) -> int:
-#     """binary search + divide and conquer: T(N) = (T(N/2) + T(N/2)) * logN = 2logNT(N/2), O(N*(logN)^(logN))
-#     """
-#     self.memo, self.nums = {}, nums
-#     self.recursive(0, len(nums), m)
-#     return self.memo[(0, len(nums), m)]
+class Solution:
+  def recursive(self, i, j, k):
+    if (i, j, k) not in self.memo:    
+      if k == 1:
+        self.memo[(i, j, k)] = sum(self.nums[i:j])
+      elif k >= j - i:
+        self.memo[(i, j, k)] = max(self.nums[i:j])
+      else:
+        self.memo[(i, j, k)] = sum(self.nums)
+        l, r = i + k // 2 - 1, j - (k - k // 2) + 1
+        while l < r:
+          m = l + (r - l) // 2
+          sl = self.recursive(i, m, k // 2)
+          sr = self.recursive(m, j, k - k // 2)
+          self.memo[(i, j, k)] = min(max(sl, sr), self.memo[(i, j, k)])
+          if sl == sr:
+            break
+          elif sl < sr:
+            l = m + 1
+          else:
+            r = m
+    # print(f"{i=}, {j=}, {k=}, {self.memo[(i, j, k)]=}")
+    return self.memo[(i, j, k)]
+  def splitArray(self, nums: List[int], m: int) -> int:
+    """binary search + divide and conquer: T(N) = (T(N/2) + T(N/2)) * logN = 2logNT(N/2), O(N*(logN)^(logN))
+    """
+    self.memo, self.nums = {}, nums
+    self.recursive(0, len(nums), m)
+    return self.memo[(0, len(nums), m)]
 
 if __name__ == '__main__':
   solver = Solution()
