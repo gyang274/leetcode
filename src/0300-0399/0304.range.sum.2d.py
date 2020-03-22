@@ -15,7 +15,7 @@ class NumMatrix:
             matrix[i][j] += matrix[i][j - 1] + matrix[i - 1][j] - matrix[i - 1][j - 1]
     self.matrix = matrix
   def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
-    x = self.matrix[row2][col2] 
+    x = self.matrix[row2][col2]
     x -= self.matrix[row1 - 1][col2] if row1 > 0 else 0
     x -= self.matrix[row2][col1 - 1] if col1 > 0 else 0
     x += self.matrix[row1 - 1][col1 - 1] if row1 > 0 and col1 > 0 else 0
