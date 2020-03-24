@@ -7,7 +7,7 @@ class DoubleLinkedList:
     self.prev = None
 
 class AllOne:
-  """Q0380, Q0381, HashMap + Linked List
+  """Q0380, Q0381, HashMap + LinkedList + RandomizedSet
   """
 
   def __init__(self):
@@ -80,7 +80,6 @@ class AllOne:
     if self.tail.prev == self.head:
       return ""
     return random.choice(list(self.tail.prev.val[1]))
-    # return random.sample(self.tail.prev.val[1], 1)[0]
     
   def getMinKey(self) -> str:
     """Returns one of the keys with Minimal value.
@@ -88,4 +87,3 @@ class AllOne:
     if self.head.next == self.tail:
       return ""
     return random.choice(list(self.head.next.val[1]))
-    # return random.sample(self.head.next.val[1], 1)[0]
