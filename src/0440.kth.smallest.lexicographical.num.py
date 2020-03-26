@@ -31,6 +31,7 @@ if __name__ == '__main__':
   solver = Solution()
   cases = [
     (13, 2),
+    (4089173, 3098723),
   ]
   rslts = [solver.findKthNumber(n, k) for n, k in cases]
   for cs, rs in zip(cases, rslts):

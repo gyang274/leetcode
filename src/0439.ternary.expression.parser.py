@@ -2,6 +2,7 @@ class Solution:
   def parseTernary(self, expression: str) -> str:
     if len(expression) == 1:
       return expression
+    # recursive
     i, q = 2, 1
     # split for True/False
     while q > 0:
@@ -10,6 +11,7 @@ class Solution:
         q += 1
       elif expression[i] == ":":
         q -= 1
+    # route the decisions
     if expression[0] == "T":
       return self.parseTernary(expression[2:i])
     else:
