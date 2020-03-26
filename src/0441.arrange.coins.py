@@ -1,13 +1,14 @@
 class Solution:
   def arrangeCoins(self, n: int) -> int:
     """1 + 2 + .. + k = k * (k + 1) / 2 <= n
-      k ~= sqrt(2n + 1/4) - 1
+      k ~= sqrt(2n + 1/4) - 0.5
     """
-    k = int((2 * n) ** 0.5 + 0.25) - 1
-    while k * (k + 1) // 2 <= n:
-      k += 1
-    return k - 1
-    
+    k = (int)((2 * n + 0.25) ** 0.5 - 0.5) 
+    # while k * (k + 1) // 2 <= n:
+    #   k += 1
+    # return k - 1
+    return k
+
 if __name__ == '__main__':
   solver = Solution()
   cases = [
