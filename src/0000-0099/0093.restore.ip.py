@@ -1,6 +1,5 @@
 from typing import List
 
-
 class Solution:
   def backtrack(self, sets, ans, s, ndot):
     if ndot == 0:
@@ -16,7 +15,6 @@ class Solution:
     self.backtrack(sets, [], s, 3)
     rslt = ['.'.join(ans) for ans in sets] 
     return rslt
-
 
 if __name__ == '__main__':
   solver = Solution()
