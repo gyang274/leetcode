@@ -4,7 +4,7 @@ class MedianFinder:
   """Solutions:
     1. add O(1), find median O(NlogN) by sort.
     2. add O(logN) + O(N) by insertion on sorted array, O(N) as potential move of array, and find median O(1).
-    3. add O(5*logN) by keep 2 priority queue for <=median and >median, find median O(1).
+    3. add O(5*logN) by keep 2 priority queue for >=median and <median, find median O(1).
   """
   def __init__(self):
     """initialize your data structure here.
