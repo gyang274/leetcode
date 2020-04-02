@@ -1,6 +1,5 @@
 from typing import List
 
-
 class Solution:
   def threeSum(self, nums: List[int]) -> List[List[int]]:
     nums.sort()
@@ -20,10 +19,8 @@ class Solution:
               xs.add(x)
     return res
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   numsList = [
     [-1, 0, 1, 2, -1, -4],
     [0, 0, 0, 0],

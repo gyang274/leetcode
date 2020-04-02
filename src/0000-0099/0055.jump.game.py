@@ -1,6 +1,5 @@
 from typing import List
 
-
 class Solution:
   def canJump(self, nums: List[int]) -> bool:
     """Dynamic Programming: O(n^2).
@@ -10,7 +9,6 @@ class Solution:
     for i in range(n - 2, -1, -1):
       nums[i] = any(nums[(i + 1):(i + nums[i] + 1)])
     return nums[0]
-
 
 class Solution:
   def canJump(self, nums: List[int]) -> bool:
@@ -23,10 +21,8 @@ class Solution:
       nums[i], k = (True, i) if i + nums[i] >= k else (False, k)
     return nums[0]
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     [2,3,1,1,4],
     [3,2,1,0,4],
