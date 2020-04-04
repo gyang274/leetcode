@@ -136,4 +136,4 @@ if __name__ == '__main__':
   ]
   rslts = [solver.shortestDistance(maze, start, destination) for maze, start, destination in cases]
   for cs, rs in zip(cases, rslts):
-    print(f"case: {cs} | solution: {rs}")  
+    print(f"case: {cs} | solution: {rs}")
