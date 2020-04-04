@@ -1,7 +1,6 @@
 from typing import List
 from config.treenode import TreeNode, listToTreeNode
 
-
 class Solution:
   def postorderTraversalRecursive(self, x, root):
     if root.left is not None:
@@ -16,7 +15,6 @@ class Solution:
     if root is not None:
       self.postorderTraversalRecursive(x, root)
     return x
-
 
 class Solution:
   def postorderTraversal(self, root: TreeNode) -> List[int]:
@@ -34,11 +32,10 @@ class Solution:
           stack.append(node.right)
     return list(reversed(x))
 
-    
 if __name__ == '__main__':  
   solver = Solution()
   cases = [
-    [1, None, 2, 3],
+    [1,None,2,3],
   ]
   cases = [
     (listToTreeNode(x)) for x in cases
@@ -48,4 +45,3 @@ if __name__ == '__main__':
   ]
   for cs, rs in zip(cases, rslts):
     print(f"case:\n{cs.display() if cs else None}, solution: {rs}")
-

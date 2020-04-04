@@ -58,7 +58,7 @@ class Solution:
 if __name__ == '__main__':  
   solver = Solution()
   cases = [
-    [1, None, 2, 3]
+    [1,None,2,3],
   ]
   cases = [
     listToTreeNode(x) for x in cases
