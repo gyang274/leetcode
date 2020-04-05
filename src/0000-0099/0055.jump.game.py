@@ -29,4 +29,4 @@ if __name__ == '__main__':
   ]
   rslts = [solver.canJump(nums) for nums in cases]
   for cs, rs in zip(cases, rslts):
-    print(f"case: {cs} | solution: {rs}")  
+    print(f"case: {cs} | solution: {rs}")
