@@ -17,7 +17,7 @@ class MaxStack:
     4 is 5's prev max and 5 is 8's prev max, so               ^
     when popMax() update global max from 8 to 5               | global max
   issue:
-    what is popMax, poMax until 4? ...
+    what is popMax, popMax until 4? ...
   """
   def __init__(self):
     """initialize your data structure here.
@@ -27,8 +27,8 @@ class MaxStack:
     self.tail = Node('')
     self.head.next = self.tail
     self.tail.prev = self.head
-    # global pointer to max node
-    self.maxnode = None
+    # global pointers to max node
+    self.maxnodes = []
   
   def push(self, x: int) -> None:
 
