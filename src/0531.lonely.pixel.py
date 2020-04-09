@@ -27,4 +27,3 @@ if __name__ == '__main__':
   rslts = [solver.findLonelyPixel(picture) for picture in cases]
   for cs, rs in zip(cases, rslts):
     print(f"case: {cs} | solution: {rs}")
-

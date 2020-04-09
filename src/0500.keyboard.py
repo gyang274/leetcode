@@ -47,4 +47,4 @@ if __name__ == '__main__':
   ]
   rslts = [solver.findWords(words) for words in cases]
   for cs, rs in zip(cases, rslts):
-    print(f"case: {cs} | solution: {rs}")  
+    print(f"case: {cs} | solution: {rs}")
