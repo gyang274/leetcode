@@ -4,7 +4,6 @@ from functools import lru_cache
 class Solution:
   def recursive(self, nums):
     k = tuple(nums)
-    print(k)
     if k not in self.memo:
       self.memo[k] = 0
       for i in range(1, len(nums) - 1):
@@ -100,7 +99,7 @@ if __name__ == '__main__':
     [2,5],
     [2,3,5],
     [3,2,5,8],
-    [8,3,4,3,5,0,5,6,6,2,8,5,6,2,3,8,3,5,1,0,2]
+    [8,3,4,3,5,0,5,6,6,2,8,5,6,2,3,8,3,5,1,0,2],
   ]
   rslts = [solver.maxCoins(nums) for nums in cases]
   for cs, rs in zip(cases, rslts):
