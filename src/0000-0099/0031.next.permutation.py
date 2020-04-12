@@ -1,10 +1,8 @@
 from typing import List
 
-
 class Solution:
   def nextPermutation(self, nums: List[int]) -> None:
-    """
-    Do not return anything, modify nums in-place instead.
+    """Do not return anything, modify nums in-place instead.
     """
     n = len(nums)
     i = n - 1
@@ -22,10 +20,8 @@ class Solution:
         nums[i + k], nums[n - 1 - k] = nums[n - 1 - k], nums[i + k]
     # return None
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     # [],
     [1],
