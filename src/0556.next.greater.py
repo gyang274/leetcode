@@ -17,7 +17,7 @@ class Solution:
       for k in range((m - i) // 2):
         nums[i + k], nums[m - 1 - k] = nums[m - 1 - k], nums[i + k]
       z = int("".join(nums)) 
-      return z if z < (1 << 31 - 1) else -1
+      return z if z < (1 << 31) else -1
   
 if __name__ == '__main__':
   solver = Solution()
