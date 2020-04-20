@@ -5,6 +5,12 @@ class Excel:
   def __init__(self, H: int, W: str):
     self.cells = [[[0, defaultdict(lambda: 0), set([])] for _ in range(H)] for _ in range(ord(W) - ord("A") + 1)]
 
+  def _update(self, rr, cc, v):
+    # cascading update: (rr, cc): row and col index, v: value change.
+    self.cells[rr][cc][0] += v
+    for (sr, sc) in self.cells[rr][cc][1]:
+      self._update(sr, sc, v * self.cells[rr][cc][1][(sr, sc)])
+
   def set(self, r: int, c: str, v: int) -> None:
     rr, cc = r - 1, ord(c) - ord("A")
     u = self.cells[rr][cc][0]
@@ -12,9 +18,7 @@ class Excel:
     # if (rr, cc) should sum to some cells, update accordingly.
     if not v == u:
       for (sr, sc) in self.cells[rr][cc][1]:
-        self.cells[sr][sc][0] += (v - u) * self.cells[rr][cc][1][(sr, sc)]
-        # cascading propagation..
-        
+        self._update(sr, sc, (v - u) * self.cells[rr][cc][1][(sr, sc)])
     # if (rr, cc) is sum of some cells, reset summation relationship.
     for ir, ic in self.cells[rr][cc][2]:
       self.cells[ir][ic][1].pop((rr, cc))
@@ -51,8 +55,7 @@ class Excel:
           self.cells[rr][cc][2].add((ir, ic))
     v = self.cells[rr][cc][0]
     for (sr, sc) in self.cells[rr][cc][1]:
-      self.cells[sr][sc][0] += (v - u) * self.cells[rr][cc][1][(sr, sc)]
-    print("sum", self.cells[rr][cc])
+      self._update(sr, sc, (v - u) * self.cells[rr][cc][1][(sr, sc)])
     return self.cells[rr][cc][0]
 
 # ["Excel","get","set","get","sum","sum","get"]
@@ -61,5 +64,5 @@ class Excel:
 # ["Excel","get","set","get","sum","get","set","get","set","get","set","get","set","get"]
 # [[3,"C"],[1,"A"],[1,"A",1],[1,"A"],[3,"C",["A1","A1:B2"]],[3,"C"],[1,"A",4],[3,"C"],[2,"B",3],[3,"C"],[3,"C",10],[3,"C"],[2,"B",2],[3,"C"]]
 
-["Excel","set","set","set","sum","get","set","get","sum","set","get","get","sum","set","get","get","get","get"]
-[[5,"E"],[1,"A",5],[1,"B",3],[1,"C",2],[1,"C",["A1","A1:B1"]],[1,"C"],[1,"B",5],[1,"C"],[1,"B",["A1:A5"]],[5,"A",10],[1,"B"],[1,"C"],[3,"C",["A1:C1","A1:A5"]],[3,"A",3],[1,"B"],[1,"C"],[3,"C"],[5,"A"]]
+# ["Excel","set","set","set","sum","get","set","get","sum","set","get","get","sum","set","get","get","get","get"]
+# [[5,"E"],[1,"A",5],[1,"B",3],[1,"C",2],[1,"C",["A1","A1:B1"]],[1,"C"],[1,"B",5],[1,"C"],[1,"B",["A1:A5"]],[5,"A",10],[1,"B"],[1,"C"],[3,"C",["A1:C1","A1:A5"]],[3,"A",3],[1,"B"],[1,"C"],[3,"C"],[5,"A"]]
