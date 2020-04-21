@@ -16,7 +16,6 @@ class Solution:
     else:
       return self.numDecodings(s[1:])
 
-
 class Solution:
   def numDecodings(self, s: str) -> int:
     """dynamic programming with memo.
@@ -32,16 +31,14 @@ class Solution:
       memo[i] = memo[i + 1] + memo[i + 2] if int(s[i:(i + 2)]) <= 26 else memo[i + 1]
     return memo[0]
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     "0",
     "1",
     "01",
     "10",
-    "100",   
+    "100",
     "110120",
     "112234",
   ]
