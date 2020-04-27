@@ -1,6 +1,5 @@
 import math
 
-
 class Solution:
   def isPalindrome(self, x: int) -> bool:
     if x < 0:
@@ -12,7 +11,6 @@ class Solution:
       q += p % 10
       p //= 10
     return q == x // 10 and p == x % 10
-
 
 if __name__ == '__main__':
   solver = Solution()
