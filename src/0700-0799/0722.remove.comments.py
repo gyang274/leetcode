@@ -26,12 +26,12 @@ class Solution:
 if __name__ == '__main__':
   solver = Solution()
   cases = [
-    # ["a/*/b//*c","blank","d//*e/*/f"],
-    # ["a//*b//*c","blank","d/*/e*//f"],
+    ["a/*/b//*c","blank","d//*e/*/f"],
+    ["a//*b//*c","blank","d/*/e*//f"],
     ["a/*/b//*c","blank","d/*/e*//f"],
-    # ["a/*comment", "line", "more_comment*/b"],
-    # ["struct Node{", "    /*/ declare members;/**/", "    int size;", "    /**/int val;", "};"],
-    # ["/*Test program */", "int main()", "{ ", "  // variable declaration ", "int a, b, c;", "/* This is a test", "   multiline  ", "   comment for ", "   testing */", "a = b + c;", "}"],
+    ["a/*comment", "line", "more_comment*/b"],
+    ["struct Node{", "    /*/ declare members;/**/", "    int size;", "    /**/int val;", "};"],
+    ["/*Test program */", "int main()", "{ ", "  // variable declaration ", "int a, b, c;", "/* This is a test", "   multiline  ", "   comment for ", "   testing */", "a = b + c;", "}"],
   ]
   rslts = [solver.removeComments(source) for source in cases]
   for cs, rs in zip(cases, rslts):

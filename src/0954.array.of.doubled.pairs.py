@@ -10,7 +10,7 @@ class Solution:
         if x == 0:
           if d[x] & 1:
             return False
-        if x > 0:
+        elif x > 0:
           if d[x * 2] >= d[x]:
             d[x * 2] -= d[x]
           else:

@@ -10,7 +10,7 @@ class Solution:
         ss.add(s)
         xs = set()
         ys = set()
-        for j, x in enumerate(nums[(i+1):]):
+        for j, x in enumerate(nums[(i + 1):]):
           if x not in xs:
             if -(s + x) not in ys:
               ys.add(x)
