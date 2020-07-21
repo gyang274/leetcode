@@ -25,7 +25,6 @@ class Solution:
         return len(A) - max(A.count(x), B.count(x))
     return -1
 
-
 if __name__ == '__main__':
   solver = Solution()
   cases = [
