@@ -16,3 +16,15 @@ class Solution:
     # 1/2 * | det |  x2 y2 1  | |
     #       |     |_ x3 y3 1 _| |
     return abs(0.5 * (x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)))
+
+  def countDigitK(self, n: int, k: int) -> int:
+    # count num of digit k appearance on all positive integer x, 1 <= x <= n.
+    count, m = 0, 1
+    while n > m - 1:
+      q, r = n // (10 * m), n % (10 * m)
+      if k == 0:
+        count += (q * m) if r >= m else ((q - 1) * m + r + 1)
+      else:
+        count += q * m + min(max(0, r - m * k + 1), m)
+      m *= 10
+    return count
