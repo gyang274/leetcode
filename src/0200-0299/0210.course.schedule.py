@@ -2,7 +2,7 @@ from typing import List
 from collections import defaultdict
 
 class Solution:
-  def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+  def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
     """graph, directed, growing the `can finish` courses init from courses w.o. prerequisites.
     """
     # construct prerequisites 
@@ -34,7 +34,7 @@ class Solution:
     return schedule
 
 class Solution:
-  def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+  def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
     """graph, directed, growing the `can finish` courses init from courses w.o. prerequisites.
       change the prep to simply count for number of courses needed before taking x, e.g., indegree.
     """
