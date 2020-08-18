@@ -3,7 +3,6 @@ from config.listnode import ListNode, listToListNode
 class Solution:
   def isPalindrome(self, head: ListNode) -> bool:
     """Two pass, 1st reach to tail and create reverse link along the way, 2nd two pointers head and tail.
-
       An alternative approach is 1st pass two pointers slow (1 step each iteration) and fast (2 step each iteration),
       and when fast reach to the tail, slow reach to middle, then reverse along the way slow from middle to the tail,
       and then 2nd pass two pointers head and tail and comparison along the way. 
