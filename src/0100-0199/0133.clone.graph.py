@@ -1,11 +1,13 @@
 """Definition for a Node.
 class Node: 
   def __init__(self, val = 0, neighbors = []): 
-    self.val = val self.neighbors = neighbors
+    self.val = val
+    self.neighbors = neighbors
 """
 class Solution:
   def cloneGraph(self, node: 'Node') -> 'Node':
-    """BFS or DFS. """
+    """BFS or DFS.
+    """
     if node is None: 
       return None 
     # clone from the node
