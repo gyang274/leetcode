@@ -28,3 +28,13 @@ class Solution:
         count += q * m + min(max(0, r - m * k + 1), m)
       m *= 10
     return count
+
+  def catalan(self, n):
+    # catalan number: C_{0} = 1, C_{n+1} = \sum_{i=0}^{n} C_{i} * C_{n-i}, n > 0
+    # C_{n} = choose(2n, n) - choose(2n, n+1) = choose(2n, n) / (n + 1), n > 0
+    x = 1
+    for i in range(1, n // 2 + 1):
+      x *= n - i + 1
+      x //= i
+    x //= (n // 2 + 1)
+    return x
