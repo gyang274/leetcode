@@ -1,6 +1,5 @@
 from config.listnode import ListNode, listToListNode, traverseListNode
 
-
 class Solution:
   def rotateRight(self, head: ListNode, k: int) -> ListNode:
     """Two pointers.
@@ -29,7 +28,6 @@ class Solution:
       s.next = x.next
       x.next = None
     return s.next
-
 
 if __name__ == '__main__':  
   solver = Solution()

@@ -47,4 +47,3 @@ if __name__ == '__main__':
   ]
   for cs, rs in zip(cases, rslts):
     print(f"case: {cs.display()} | solution: {rs}")
-        
