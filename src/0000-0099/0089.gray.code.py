@@ -1,6 +1,5 @@
 from typing import List
 
-
 class Solution:
   def grayCode(self, n: int) -> List[int]:
     """Mirror Exender.
@@ -33,10 +32,8 @@ class Solution:
       x += [z + (1 << i) for z in reversed(x)]
     return x
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     0,
     1,
