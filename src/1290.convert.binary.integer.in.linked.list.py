@@ -4,7 +4,8 @@ class Solution:
   def getDecimalValue(self, head: ListNode) -> int:
     node, x = head, 0
     while node:
-      x = x * 2 + node.val
+      # x = x * 2 + node.val
+      x = (x << 1) + node.val
       node = node.next
     return x
 
