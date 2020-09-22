@@ -1,6 +1,5 @@
 from typing import List
 
-
 class Solution:
   def canReach(self, arr: List[int], start: int) -> bool:
     if arr[start] == 0:
@@ -18,7 +17,6 @@ class Solution:
       e, b = b, e
     return False
 
-
 class Solution:
   def canReach(self, arr: List[int], start: int) -> bool:
     v, b, e, n = set(), set([start]), set(), len(arr)
@@ -34,7 +32,6 @@ class Solution:
       e, b = b, e
     return False
 
-
 if __name__ == '__main__':
   solver = Solution()
   # test cases
@@ -46,4 +43,4 @@ if __name__ == '__main__':
   ]
   rslts = [solver.canReach(arr, start) for arr, start in cases]
   for cs, rs in zip(cases, rslts):
-    print(f"case: {cs} | solution: {rs}")  
+    print(f"case: {cs} | solution: {rs}")
