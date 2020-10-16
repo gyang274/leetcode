@@ -19,6 +19,29 @@ class Solution:
     self.memo = {}
     return self.recursive(n, m, k)
 
+import itertools
+
+class Solution:
+  def numOfArrays(self, n: int, m: int, k: int) -> int:
+    # dynamic programming
+    # dp[u][v][w] means:
+    #  1. u: length of the array is u, u = 1,..,n
+    #  2. v: the cost of the algo is v, v = 1,..,k
+    #  3. w: the max value in the array is w, w = 1,..,m
+    dp = [[[0 for _ in range(m + 1)] for _ in range(k + 1)] for _ in range(n + 1)]
+    # the array has length of 1, and 1 jump, only 1 way to do that, for any k
+    for w in range(1, m + 1):
+      dp[1][1][w] = 1
+    for u, v, w in itertools.product(range(1, n + 1), range(1, k + 1), range(m + 1)):
+      # extend without extra cost with max value w
+      #  so the new value can be any value of 1,..,w
+      dp[u][v][w] += dp[u - 1][v][w] * w
+      # extend with an extra cost with max value w
+      #  the max value from previous must be 1,..,w-1
+      dp[u][v][w] += sum(dp[u - 1][v - 1][1:w])
+    # valid case are max value of all 1:m with array length n and cost k
+    return sum(dp[n][k][1:]) % (10 ** 9 + 7)
+
 if __name__ == '__main__':
   solver = Solution()
   cases = [
