@@ -4,7 +4,7 @@ class SegmentTree:
     self.n = len(nums)
     self.tree = [None] * self.n + nums
     for i in range(self.n - 1, 0, -1):
-      self.tree[i] = self.tree[2 * i] + self.tree[2 * i + 1]
+      self.tree[i] = query(self.tree[2 * i], self.tree[2 * i + 1])
     self._update = update
     self._query = query
 
