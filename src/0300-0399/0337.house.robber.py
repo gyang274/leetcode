@@ -27,6 +27,7 @@ class Solution:
     # max value if not rob this one
     node.notVal = (max(node.left.robVal, node.left.notVal) if node.left else 0) + (max(node.right.robVal, node.right.notVal) if node.right else 0)
   def rob(self, root: TreeNode) -> int:
+    # use node associated value (robval and notVal) as memorization.
     if not root:
       return 0
     self.recursive(root)
