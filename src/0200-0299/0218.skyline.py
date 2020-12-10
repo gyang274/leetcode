@@ -3,7 +3,7 @@ from itertools import chain
 
 class Solution:
   def getSkyline(self, buildings: List[List[int]]) -> List[List[int]]:
-    # convert buildings from [[li, ri, hi], ..] to [[i, l, h, 0], [i, r, h, 1], ..]
+    # convert buildings from [[li, ri, hi], ..] to [[i, l, h, -1], [i, r, h, 1], ..]
     # xyz: x-coordinate l and r, y-coordinate height, z-coordinate in and out
     ixyzlist = list(chain.from_iterable(((i, l, h, -1), (i, r, h, 1)) for i, (l, r, h) in enumerate(buildings)))
     # sorted by x-coordinate l and r, 
