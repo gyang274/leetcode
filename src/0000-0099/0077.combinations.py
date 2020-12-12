@@ -1,9 +1,8 @@
 from typing import List
 
-
 class Solution:
   def combine(self, n: int, k: int) -> List[List[int]]:
-    """Lexicographic (binary sorted) combinations. YG.
+    """Lexicographic (binary sorted) combinations.
     """
     x = [i for i in range(1, k + 1)]
     y = []
@@ -21,7 +20,6 @@ class Solution:
         for j in range(i, 0):
           x[j] = z - i + j + 1
     return None
-
 
 # class Solution:
 #   def combine(self, n: int, k: int) -> List[List[int]]:
@@ -42,10 +40,8 @@ class Solution:
 #       x[j] += 1
 #     return y
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     (1, 1),
     (4, 2),
