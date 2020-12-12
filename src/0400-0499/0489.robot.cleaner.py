@@ -2,7 +2,7 @@
 # This is the robot's control interface.
 # You should not implement it, or speculate about its implementation
 # """
-  # class Robot:
+# class Robot:
   # def move(self):
   #   """
   #   Returns true if the cell in front is open and robot moves into the cell.
