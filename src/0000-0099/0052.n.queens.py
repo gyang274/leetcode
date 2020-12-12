@@ -23,10 +23,8 @@ class Solution:
     self.backtrack(rows, cols, hill,rowNext, dale, n)
     return self.count
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     0,
     1,
