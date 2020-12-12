@@ -1,6 +1,5 @@
 from typing import List
 
-
 class Solution:
   def solveSudoku(self, board: List[List[str]]) -> None:        
     """
@@ -55,10 +54,8 @@ class Solution:
         d -= 1
     return None
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     [
       ["5","3",".",".","7",".",".",".","."],
