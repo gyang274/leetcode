@@ -14,7 +14,6 @@ class Solution:
         memo[i] += memo[j] * memo[i - 1 - j]
     return memo[n]
 
-
 class Solution:
   def numTrees(self, n: int) -> int:
     """dynamic programming with memo.
@@ -29,7 +28,6 @@ class Solution:
         memo[i] += memo[j] * memo[i - 1 - j]
     return memo[n]
 
-
 class Solution:
   def numTrees(self, n: int) -> int:
     """math deduction
@@ -39,10 +37,8 @@ class Solution:
       C = C * 2 * (2 * i + 1) // (i + 2)
     return C
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     0,
     1,
@@ -54,4 +50,3 @@ if __name__ == '__main__':
   rslts = [solver.numTrees(n) for n in cases]
   for cs, rs in zip(cases, rslts):
     print(f"case: {cs} | solution: {rs}")
-    

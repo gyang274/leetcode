@@ -1,7 +1,6 @@
 from typing import List
 from config.treenode import TreeNode, listToTreeNode
 
-
 class Solution:
   def recoverTree(self, root: TreeNode) -> None:
     """Do not return anything, modify root in-place instead.
@@ -30,7 +29,6 @@ class Solution:
       prev.val, last.val = last.val, prev.val
     return None
 
-
 class Solution:
   def recoverTree(self, root: TreeNode):
     """Do not return anything, modify root in-place instead.
@@ -58,7 +56,6 @@ class Solution:
       prev = root
       root = root.right
     x.val, y.val = y.val, x.val
-
 
 if __name__ == '__main__':  
   solver = Solution()

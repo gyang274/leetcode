@@ -1,6 +1,5 @@
 from config.treenode import TreeNode, listToTreeNode
 
-
 class Solution:
   def isValidBST(self, root: TreeNode) -> bool:
     """Approaches:
@@ -21,7 +20,6 @@ class Solution:
         else:
           return False
     return True
-
 
 if __name__ == '__main__':  
   solver = Solution()

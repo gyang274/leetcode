@@ -17,7 +17,6 @@ class Solution:
       return False
     return self.backtrack(s1, s2, s3, 0, 0, 0)
 
-
 class Solution:
   def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
     """dynamic programming
@@ -34,7 +33,6 @@ class Solution:
           # print(f"{k=}, {i=}, {j=}, {s3[-k]=}, {s1[-i]=}, {s2[-j]}, {dp[k - 1][i - 1][j]=}, {dp[k - 1][i][j - 1]=}")
           dp[k][i][j] = (dp[k - 1][i - 1][j] and s3[-k] == s1[-i]) or (dp[k - 1][i][j - 1] and s3[-k] == s2[-j])
     return dp[len(s3)][len(s1)][len(s2)]
-
 
 class Solution:
   def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
@@ -56,10 +54,8 @@ class Solution:
       return memo[(i, j)]
     return dp(len(s1), len(s2))
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     ("aa", "bbb", "ababa"),
     ("aabcc", "dbbca", "aadbbcbcac"),

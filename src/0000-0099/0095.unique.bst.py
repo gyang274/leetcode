@@ -1,7 +1,6 @@
 from typing import List
 from config.treenode import TreeNode
 
-
 class Solution:
   def preorderListToTreeNode(self, x: List) -> TreeNode:
     """preorder representation of tree as list with none back to root (TreeNode), copied from ./config/treenode.py
@@ -44,7 +43,6 @@ class Solution:
     ans = [self.preorderListToTreeNode(x) for x in memo[n]]
     return ans
 
-
 if __name__ == '__main__':  
   solver = Solution()
   cases = [
@@ -62,4 +60,3 @@ if __name__ == '__main__':
     print(f"case: {cs} | solution: {len(rs)}")
     for r in rs:
       print(r.display())
-      
