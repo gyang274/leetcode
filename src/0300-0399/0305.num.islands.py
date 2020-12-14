@@ -14,7 +14,7 @@ class Solution:
     """Disjoint-Set: https://en.wikipedia.org/wiki/disjoint-set_data_structure
     """
     matrix = [[-1] * n for _ in range(m)]
-    # disjoint set, init each operation/island root to itself, height 0
+    # disjoint set union, init each operation/island root to itself, height 0
     # when two islands connected, pointing both to the smaller one
     root = [[i, 1] for i in range(len(positions))]
     # k: number of islands, islands: num of islands after each operations
@@ -31,7 +31,7 @@ class Solution:
           i, j = x + dx, y + dy
           # new island (x, y) is connected to some existing island
           if 0<= i < m and 0 <= j < n and matrix[i][j] > -1:
-            # add the root of existing island (index, disjoint-set height)
+            # add the root of existing island (index, disjoint set height)
             r = matrix[i][j]
             while not root[r][0] == r:
               r = root[r][0]

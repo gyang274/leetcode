@@ -27,7 +27,7 @@ class Solution:
   def numDistinctIslands2(self, grid: List[List[int]]) -> int:
     """Q0694
     """
-    # disjoint-union set
+    # disjoint set union
     m = len(grid)
     if m == 0:
       return 0

@@ -16,7 +16,7 @@ class DSU:
 
 class Solution:
   def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
-    # disjoint-union set
+    # disjoint set union
     m = len(grid)
     if m == 0:
       return 0

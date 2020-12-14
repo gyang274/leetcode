@@ -30,7 +30,7 @@ class Solution:
   def largestIsland(self, grid: List[List[int]]) -> int:
     """Q0694, Q0695, Q0803. TC: O(N^2), SC: O(N^2).
     """
-    # disjoint-union set
+    # disjoint set union
     m = len(grid)
     if m == 0:
       return 0
