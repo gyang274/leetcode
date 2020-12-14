@@ -15,7 +15,7 @@ class DSU:
 
 class Solution:
   def areSentencesSimilarTwo(self, words1: List[str], words2: List[str], pairs: List[List[str]]) -> bool:
-    """disjoint union set
+    """disjoint set union
     """
     if not len(words1) == len(words2):
       return False

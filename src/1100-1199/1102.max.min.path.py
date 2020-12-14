@@ -23,7 +23,7 @@ class Solution:
     for i in range(m):
       for j in range(n):
         d[A[i][j]].add((i, j))
-    # disjoint-set union
+    # disjoint set union
     dsu = DSU(reps = {(i, j): (i, j) for i, j in product(range(m), range(n))})
     # keep joining cells until connected
     vs, seen = sorted(d.keys(), reverse=True), set()

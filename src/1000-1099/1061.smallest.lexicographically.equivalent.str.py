@@ -14,7 +14,7 @@ class DSU:
 
 class Solution:
   def smallestEquivalentString(self, A: str, B: str, S: str) -> str:
-    # disjoint-set union
+    # disjoint set union
     dsu = DSU(reps = {x: x for x in string.ascii_lowercase})
     # dsu with smallest character as representer
     for x, y in zip(A, B):

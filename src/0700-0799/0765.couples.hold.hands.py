@@ -22,7 +22,7 @@ class Solution:
       s - 1 swaps, as a result, init m cycles -> n - m swaps.
     """
     n = len(row)
-    # disjoint-union 
+    # disjoint set union 
     # seat index // 2 as node
     dsu = DSU(reps={i: i for i in range(n // 2)})
     # couples seats X, Y
