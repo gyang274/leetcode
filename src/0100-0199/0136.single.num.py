@@ -11,7 +11,6 @@ class Solution:
 
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     [0],
     [2,1,2],
