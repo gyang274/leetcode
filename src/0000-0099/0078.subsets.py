@@ -1,6 +1,5 @@
 from typing import List
 
-
 class Solution:
   def subsets(self, nums: List[int]) -> List[List[int]]:
     """Lexicographic (Binary Sorted) Subsets. YG.
@@ -16,7 +15,6 @@ class Solution:
       x.append(z)
     return x
 
-
 # class Solution:
 #   def subsets(self, nums: List[int]) -> List[List[int]]:
 #     """Lexicographic (Binary Sorted) Subsets.
@@ -29,10 +27,8 @@ class Solution:
 #       x.append([nums[j] for j in range(n) if bitmask[j] == '1'])
 #     return x
 
-
 if __name__ == '__main__':
   solver = Solution()
-  # test cases
   cases = [
     [],
     [1],
