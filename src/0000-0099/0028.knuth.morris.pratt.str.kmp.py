@@ -42,13 +42,13 @@ class Solution:
 if __name__ == '__main__':
   solver = Solution()
   cases = [
+    ("", ""),
+    ("world", ""),
     ("hello", "ll"),
     ("aaaaa", "ab"),
     ("aaaaaaaaaab", "aaaaab"),
     ("abababababababababababca", "ababababca"),
     ("mississippi", "issi"),
-    ("world", ""),
-    ("", ""),
   ]
   rslts = [solver.strStr(s, pattern) for s, pattern in cases]
   for cs, rs in zip(cases, rslts):
