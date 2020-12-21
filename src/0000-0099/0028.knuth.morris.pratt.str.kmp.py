@@ -45,10 +45,10 @@ if __name__ == '__main__':
     ("", ""),
     ("world", ""),
     ("hello", "ll"),
+    ("mississippi", "issi"),
     ("aaaaa", "ab"),
     ("aaaaaaaaaab", "aaaaab"),
     ("abababababababababababca", "ababababca"),
-    ("mississippi", "issi"),
   ]
   rslts = [solver.strStr(s, pattern) for s, pattern in cases]
   for cs, rs in zip(cases, rslts):
